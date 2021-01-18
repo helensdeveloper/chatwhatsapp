@@ -15,6 +15,7 @@ class Login extends CI_Controller
 
 	function index()
 	{
+		cek_sesi_login();
 		$this->load->view('auth/login');
 	}
 
@@ -37,35 +38,34 @@ class Login extends CI_Controller
 				'uid'      	=> $row->u_id,
 				'role'     	=> $row->u_role
 			));
-			$url=base_url('login/cekrole');
 			$dtime 	  = date('d-m-Y H:i:s');
 			$ip = $this->auth_model->getClientIP();
 			$this->auth_model->lastlogin($username,$dtime,$ip);
-			redirect($url);
+			$data = 1;
+			$query = $this->db->get_where('apps', array('apps_id' => $data));
+			if($query->num_rows() > 0){
+				$row = $query->row_array();
+				$apps_code = $row['apps_code'];
+				if ($apps_code != NULL) {
+					$api = file_get_contents('https://api.gatewayku.id/apps?apps_id='.$apps_code);
+					foreach (json_decode($api, TRUE) as $key => $value);
+					$apps_id = $value['apps_id'];
+					if ($apps_code == $apps_id) {
+						$url=base_url('dashboard');
+						redirect($url);
+					}else{
+						$url = base_url('verify');
+						redirect($url);
+					}
+				}else{
+					$url = base_url('verify');
+					redirect($url);
+				}
+			}
 		}else{
 			$url=base_url('login');
 			echo $this->session->set_flashdata('msg','<span style="color: white; background: red; font-size: 20px">Error!! Username atau Password Salah</span>');
 			redirect($url);
 		}
 	}
-
-	function cekrole()
- 	{
- 		if ($this->session->userdata('logged') != true) {
- 			redirect('');
- 		}else{
- 			$user = $this->session->userdata('uid');
- 			$query=$this->db->get_where('users', array('u_id' => $user));
- 			if ($query->num_rows()>0) {
- 				$row = $query->row_array();
- 				$role = $row['u_role'];
- 			}
-
- 			if ($role != 1) {
- 				redirect('customer');
- 			}else{
- 				redirect('admin/dashboard');
- 			}
- 		}
- 	}
 } ?>

@@ -16,7 +16,7 @@ if (!function_exists('cek_sesi_login')) {
 		$CI =& get_instance();
 		$sesi = $CI->session->userdata('logged');
 		if ($sesi == 'true') {
-			redirect('auth/ceksesi');
+			redirect('dashboard');
 		}
 	}
 }
@@ -32,10 +32,23 @@ function generate($input, $strength = 16) {
 	return $random_string;
 }
 
-if (!function_exists('rupiah')) {
-	function rupiah($angka){
-		$hasil_rupiah = number_format($angka,0,',','.');
-		return $hasil_rupiah;
+if (!function_exists('notif')) {
+	function notif() {
+		$CI =& get_instance();
+		return $CI->session->set_flashdata('msg','<div class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><h4>Akses Ditolak</h4><p>Anda Tidak Memiliki Akses Ke Halaman Ini.</p></div>');
+	}
+}
+
+if (!function_exists('hasPermission')) {
+	function hasPermission($arr) {
+		$CI =& get_instance();
+		$current = $CI->session->userdata('role');
+		if (in_array($current, $arr)) {
+			return true;
+		} else {
+			notif('error','Anda Belum Melakukan Set PIN !!');
+			redirect('dashboard');
+		}
 	}
 }
 ?>

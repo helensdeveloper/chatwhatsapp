@@ -11,7 +11,7 @@ if ($query->num_rows()>0) {
 	$u_ip = $row['u_ip'];
 	$u_photo = $row['u_photo'];
 }
-$api = file_get_contents('https://cintarest.helenscloud.web.id/apps?apps_id=4957124436');
+$api = file_get_contents('https://api.gatewayku.id/apps?apps_id=4957124436');
 foreach (json_decode($api, TRUE) as $key => $value)
 	?>
 <!DOCTYPE html>
@@ -84,113 +84,7 @@ foreach (json_decode($api, TRUE) as $key => $value)
 	<div class="main-container" id="container">
 		<div class="overlay"></div>
 		<div class="search-overlay"></div>
-		<div class="sidebar-wrapper sidebar-theme">
-			<nav id="compactSidebar">
-				<div class="theme-logo">
-					<a href="<?=base_url('admin/dashboard')?>">
-						<img src="<?=base_url('fav-icon.ico')?>" class="navbar-logo" alt="logo">
-					</a>
-				</div>
-				<ul class="menu-categories">
-					<li class="menu active">
-						<a href="#dashboard" data-active="true" class="menu-toggle">
-							<div class="base-menu">
-								<div class="base-icons">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-								</div>
-							</div>
-						</a>
-						<div class="tooltip"><span>Dashboard</span></div>
-					</li>
-
-					<li class="menu">
-						<a href="#app" data-active="false" class="menu-toggle">
-							<div class="base-menu">
-								<div class="base-icons">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
-								</div>
-							</div>
-						</a>
-						<div class="tooltip"><span>Apps</span></div>
-					</li>
-					<li class="menu">
-						<a href="#forms" data-active="false" class="menu-toggle">
-							<div class="base-menu">
-								<div class="base-icons">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-								</div>
-							</div>
-						</a>
-						<div class="tooltip"><span>Data Karyawan</span></div>
-					</li>
-					<li class="menu">
-						<a href="#users" data-active="false" class="menu-toggle">
-							<div class="base-menu">
-								<div class="base-icons">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-								</div>
-							</div>
-						</a>
-						<div class="tooltip"><span>Users</span></div>
-					</li>
-				</ul>
-			</nav>
-
-			<div id="compact_submenuSidebar" class="submenu-sidebar">
-				<div class="theme-brand-name">
-					<a href="index.html"><?php echo APPS_NAME ?></a>
-				</div>
-				<div class="submenu" id="dashboard">
-					<div class="category-info">
-						<h5>Dashboard</h5>
-					</div>
-					<ul class="submenu-list" data-parent-element="#dashboard"> 
-						<li class="active">
-							<a href="<?=base_url('admin/dashboard')?>"> <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg></span> Panel Admin</a>
-						</li>
-						<li>
-							<a href="<?=base_url('cs/dashboard')?>"> <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg></span> Panel CS</a>
-						</li>
-					</ul>
-				</div>
-				<div class="submenu" id="app">
-					<div class="category-info">
-						<h5>Apps</h5>
-					</div>
-					<ul class="submenu-list" data-parent-element="#app">
-						<li>
-							<a href="<?=base_url('admin/device')?>"> <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg></span> Device</a>
-						</li>
-					</ul>
-				</div>
-				<div class="submenu" id="forms">
-					<div class="category-info">
-						<h5>Data Karyawan</h5>
-					</div>
-					<ul class="submenu-list" data-parent-element="#forms">
-						<li>
-							<a href="<?=base_url('admin/data=master')?>"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg></span> Master Data</a>
-						</li>
-						<li>
-							<a href="<?=base_url('admin/data=jabatan')?>"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg></span> Jabatan</a>
-						</li>
-						<li>
-							<a href="<?=base_url('admin/data=add')?>"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg></span> Make CS Users</a>
-						</li>
-					</ul>
-				</div>
-				<div class="submenu" id="users">
-					<div class="category-info">
-						<h5>Users</h5>
-					</div>
-					<ul class="submenu-list" data-parent-element="#users">
-						<li>
-							<a href="<?=base_url('admin/data=users')?>"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg></span> CS Users </a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<?php $this->load->view('admin/menu') ?>
 		<div id="content" class="main-content">
 			<div class="layout-px-spacing">
 				<div class="row layout-top-spacing">
@@ -243,7 +137,6 @@ foreach (json_decode($api, TRUE) as $key => $value)
 									</div>
 								</div>
 							</div>
-
 						</div>
 					</div>
 					<div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
@@ -262,16 +155,26 @@ foreach (json_decode($api, TRUE) as $key => $value)
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td><div class="td-content customer-name"><img src="<?=base_url().'themes/img/lk.png'?>" alt="avatar">Laurie Fox</div></td>
-												<td><div class="td-content product-brand">usercs1</div></td>
-												<td><div class="td-content"><span class="badge outline-badge-danger">Deactive</span></div></td>
-											</tr>
-											<tr>
-												<td><div class="td-content customer-name"><img src="assets/img/90x90.jpg" alt="avatar">Luke Ivory</div></td>
-												<td><div class="td-content product-brand">usercs2</div></td>
-												<td><div class="td-content"><span class="badge outline-badge-success">Active</span></div></td>
-											</tr>
+											<?php foreach($DataUsers->result() as $du): ?>
+												<?php if ($du->u_id != 1): ?>
+													<tr>
+														<?php 
+	                                                    $query=$this->db->get_where('karyawan', array('k_id' => $du->u_kid));
+	                                                    if ($query->num_rows()>0) {
+	                                                        $row = $query->row_array();
+	                                                        $nama = $row['k_nama'];
+	                                                    }
+	                                                    ?>
+														<td><div class="td-content customer-name"><img src="<?=base_url().'themes/img/'.$du->u_photo?>" alt="avatar"><?=$nama?></div></td>
+														<td><div class="td-content product-brand"><?=$du->u_name?></div></td>
+														<?php if ($du->u_stat != 1): ?>
+															<td><div class="td-content"><span class="badge outline-badge-danger">Deactive</span></div></td>
+															<?php else: ?>
+																<td><div class="td-content"><span class="badge outline-badge-success">Active</span></div></td>
+														<?php endif ?>
+													</tr>
+												<?php endif ?>
+											<?php endforeach;?>
 										</tbody>
 									</table>
 								</div>

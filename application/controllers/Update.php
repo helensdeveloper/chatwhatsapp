@@ -25,4 +25,26 @@ class Update extends CI_Controller
 		$url = base_url().'admin/setting';
 		redirect($url);
 	}
+
+	function AppsUpdate()
+	{
+		$data = 1;
+		$appstoken = $this->input->post('appstoken');
+		$this->db->set('apps_token', $appstoken);
+		$this->db->where('apps_id', $data);
+		$this->db->update('apps');
+		$url = base_url().'admin/setting';
+		redirect($url);
+	}
+
+	function DeviceKey()
+	{
+		$data = 1;
+		$DeviceKey = $this->input->post('DeviceKey');
+		$this->db->set('apps_token', $DeviceKey);
+		$this->db->where('apps_id', $data);
+		$this->db->update('apps');
+		$url = base_url().'admin/setting';
+		redirect($url);
+	}
 } ?>

@@ -17,6 +17,12 @@
         return $result;
     }
 
+    function DataUsers()
+    {
+        $result = $this->db->query("SELECT * FROM users");
+        return $result;
+    }
+
     function AddCS($user,$pass,$email,$photo,$id,$k_status)
     {
         $data = array(
@@ -33,7 +39,7 @@
         $this->db->insert('users', $data);
     }
 
-    function AddKaryawan($k_nama,$k_jk,$k_phone,$k_kota,$k_lahir,$k_jabatan)
+    function AddKaryawan($k_nama,$k_jk,$k_phone,$k_kota,$k_lahir,$k_jabatan,$k_email)
     {
         $data = array(
             'k_nama' => $k_nama,
@@ -42,6 +48,7 @@
             'k_lahir' => $k_lahir,
             'k_jabatan'  => $k_jabatan,
             'k_phone' => $k_phone,
+            'k_email' => $k_email,
             'k_status'   => 1
         );
         $this->db->insert('karyawan', $data);
