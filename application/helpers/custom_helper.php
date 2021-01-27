@@ -32,6 +32,26 @@ function generate($input, $strength = 16) {
 	return $random_string;
 }
 
+function http_request($url, $token) {
+	$ch = curl_init();
+	curl_setopt_array($ch, [
+		CURLOPT_URL => $url,
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => "",
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 30,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => "GET",
+		CURLOPT_POSTFIELDS => "",
+		CURLOPT_HTTPHEADER => [
+			"Authorization: Bearer ".$token,
+		],
+	]);
+	$respons = curl_exec($ch);
+	curl_close($ch);
+	return $output;
+}
+
 if (!function_exists('notif')) {
 	function notif() {
 		$CI =& get_instance();

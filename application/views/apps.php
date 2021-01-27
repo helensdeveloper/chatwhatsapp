@@ -150,7 +150,7 @@ if ($query->num_rows()>0) {
 			</div>
 		</div>
 
-			<!-- <div class="tab-pane" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
+			<div class="tab-pane" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
 				<div>
 					<div class="px-4 pt-4">
 						<h4 class="mb-4">Chats</h4>
@@ -459,16 +459,11 @@ if ($query->num_rows()>0) {
 									</div>
 								</a>
 							</li>
-
-
 						</ul>
 					</div>
-
 				</div>
-				End chat-message-list
 			</div>
-			Start chats content -->
-		<!-- </div> -->
+		</div>
 		<!-- Start Settings content -->
 	</div>
 	<!-- End settings tab-pane -->

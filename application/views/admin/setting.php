@@ -20,8 +20,9 @@ if ($query->num_rows()>0) {
 	$apps_token = $row['apps_token'];
 	$apps_devicekey = $row['apps_devicekey'];
 	$apps_update = $row['apps_update'];
+    $apps_code = $row['apps_code'];
 }
-$api = file_get_contents('https://api.gatewayku.id/apps?apps_id=4957124436');
+$api = file_get_contents('https://api.gatewayku.id/apps?apps_id='.$apps_code);
 foreach (json_decode($api, TRUE) as $key => $value)
 	?>
 <!DOCTYPE html>

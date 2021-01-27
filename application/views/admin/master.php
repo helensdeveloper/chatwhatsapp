@@ -11,7 +11,14 @@ if ($query->num_rows()>0) {
 	$u_ip = $row['u_ip'];
 	$u_photo = $row['u_photo'];
 }
-$api = file_get_contents('https://api.gatewayku.id/apps?apps_id=4957124436');
+
+$getapps = 1;
+$query=$this->db->get_where('apps', array('apps_id' => $getapps));
+if ($query->num_rows()>0) {
+    $row = $query->row_array();
+    $apps_code = $row['apps_code'];
+}
+$api = file_get_contents('https://api.gatewayku.id/apps?apps_id='.$apps_code);
 foreach (json_decode($api, TRUE) as $key => $value)
 	?>
 <!DOCTYPE html>

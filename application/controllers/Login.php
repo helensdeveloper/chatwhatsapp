@@ -10,6 +10,7 @@ class Login extends CI_Controller
 		parent::__construct();
 		$this->load->model('Setting_model', 'setting_model');
 		$this->load->model('Auth_model', 'auth_model');
+		$this->load->model('Data_model', 'data_model');
 		error_reporting(0);
 	}
 
@@ -33,10 +34,24 @@ class Login extends CI_Controller
 		$cek_login	= $this->auth_model->cek_login($username,$enkrip);
 		if ($cek_login->num_rows() == 1) {
 			$row = $cek_login->row();
+			$role = $row->u_role;
+			$query = $this->db->get_where('apps', array('apps_id' => 1));
+			$rowapps = $query->row_array();
+            $device_key = $rowapps[apps_devicekey];
+			if ($role != 1) {
+				$url = "/devices";
+				$Resapi = json_decode($this->data_model->Resapi("$url", ""), true);
+				if ($Resapi[data][0]['status'] != "PAIRED") {
+					$url = base_url('login');
+					echo $this->session->set_flashdata('msg', '<span style="color: white; background: red; font-size: 20px">Error!! Sorry devices not active</span>');
+					redirect($url);exit;
+				}
+			}
 			$this->session->set_userdata(array(
 				'logged'	=> 'true',
 				'uid'      	=> $row->u_id,
-				'role'     	=> $row->u_role
+				'role'     	=> $row->u_role,
+				'device_key' => $device_key
 			));
 			$dtime 	  = date('d-m-Y H:i:s');
 			$ip = $this->auth_model->getClientIP();

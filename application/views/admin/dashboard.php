@@ -11,7 +11,14 @@ if ($query->num_rows()>0) {
 	$u_ip = $row['u_ip'];
 	$u_photo = $row['u_photo'];
 }
-$api = file_get_contents('https://api.gatewayku.id/apps?apps_id=4957124436');
+
+$getapps = 1;
+$query=$this->db->get_where('apps', array('apps_id' => $getapps));
+if ($query->num_rows()>0) {
+	$row = $query->row_array();
+	$apps_code = $row['apps_code'];
+}
+$api = file_get_contents('https://api.gatewayku.id/apps?apps_id='.$apps_code);
 foreach (json_decode($api, TRUE) as $key => $value)
 	?>
 <!DOCTYPE html>
@@ -96,27 +103,12 @@ foreach (json_decode($api, TRUE) as $key => $value)
 							<div class="widget-content">
 								<div class="invoice-box">
 									<div class="acc-total-info">
-										<h5>Nama Perusahaan</h5>
-										<p class="acc-amount"><?=$apps_corp?></p>
+										<h5>Apps Detail</h5>
 									</div>
-
-									<div class="inv-detail">                                    
-										<div class="info-detail-1">
-											<p>Company email</p>
-											<p><?=$apps_email?></p>
-										</div>
+									<div class="inv-detail">
 										<div class="info-detail-2">
 											<p>APPS Name</p>
 											<p><?php echo APPS_NAME ?></p>
-										</div>
-										<div class="info-detail-2">
-											<p>APPS Version</p>
-											<p><?php echo APPS_VERSI ?></p>
-										</div>
-									</div>
-									<div class="inv-detail">
-										<div class="acc-total-info">
-											<h5>Apps Detail</h5>
 										</div>
 										<div class="info-detail-2">
 											<p>APPS Code</p>
@@ -127,7 +119,6 @@ foreach (json_decode($api, TRUE) as $key => $value)
 											<p><?php echo $value['apps_version'] ?></p>
 										</div>
 									</div>
-
 									<div class="inv-action">
 										<a href="" class="btn btn-outline-dark">Summary</a>
 										<?php if (APPS_VERSI < $value['apps_version']): ?>
