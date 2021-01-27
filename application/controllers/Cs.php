@@ -43,13 +43,16 @@ class Cs extends CI_Controller {
 
 		$chat_id = $_POST['id'];
 		$name = $_POST['name'];
-		$url = "/messages?chat_id=$chat_id&order_by=asc&limit=1000";
+		$url = "/messages?chat_id=$chat_id&order_by=desc&limit=1000";
 		$Resapi = $this->data_model->Resapi("$url", "");
 //		 echo $Resapi;
 //		 exit;
 
 //		$chatdata = array_reverse(json_decode($Resapi, true)['data'], true);
 		$chatdata = json_decode($Resapi, true)['data'];
+		$query = $this->db->get_where('apps', array('apps_id' => 1));
+		$rowapps = $query->row_array();
+		$data['link'] = $rowapps['apps_api'];
 
 		$data['id'] = $chat_id;
 		$data['name'] = $name;

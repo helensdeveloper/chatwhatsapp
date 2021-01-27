@@ -68,7 +68,7 @@
                         <?php if ($data['media_url'] != null) {?>
 
                             <?php if ($data['type'] == "image") {?>
-                                <a href="<?="http://149.28.139.195:3333" . $data['media_url']?>" target="_blank">     <img src="<?="http://149.28.139.195:3333" . $data['media_url']?>" width="50px;"></a>
+                                <a href="http://45.77.168.214:3333<?=$data['media_url']?>" target="_blank">     <img src="http://45.77.168.214:3333<?=$data['media_url']?>" width="50px;"></a>
                             <?php }?>
 
                             <?php if ($data['type'] == "document") {?>
