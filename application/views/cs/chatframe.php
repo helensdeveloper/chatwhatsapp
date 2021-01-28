@@ -1,3 +1,6 @@
+
+<?php //echo $apps_api ;exit;?>
+
 <div class="p-3 p-lg-4 border-bottom">
             <div class="row align-items-center">
               <div class="col-sm-4 col-8">
@@ -68,11 +71,11 @@
                         <?php if ($data['media_url'] != null) {?>
 
                             <?php if ($data['type'] == "image") {?>
-                                <a href="http://45.77.168.214:3333<?=$data['media_url']?>" target="_blank">     <img src="http://45.77.168.214:3333<?=$data['media_url']?>" width="50px;"></a>
+                                <a href="http://45.77.168.214:3333<?=$data['media_url']?>" target="_blank">     <img src="http://45.77.168.214:3333/media/4/3EB095A60572C9CEB3BF.jpeg" width="50px;"></a>
                             <?php }?>
 
                             <?php if ($data['type'] == "document") {?>
-                               <a href="<?="http://149.28.139.195:3333" . $data['media_url']?>" target="_blank">Document</a>
+                               <a href="<?=$apps_api . $data['media_url']?>" target="_blank">Document</a>
                             <?php }?>
                         <?php }?>
                         </div>

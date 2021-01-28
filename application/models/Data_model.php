@@ -11,7 +11,7 @@ class Data_model extends CI_Model {
 		// return json_encode($row, true);exit;
 		$baseurl = "$row[apps_api]";
 		$key = "$row[apps_token]";
-		$device_key = $this->session->userdata('device_key');
+		$device_key = $user = $this->session->userdata('device_key');
 		$curl = curl_init();
 		if ($data == "") {
 			$headers = array(

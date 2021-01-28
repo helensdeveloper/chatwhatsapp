@@ -7,7 +7,6 @@ class Cs extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('Data_model', 'data_model');
-		// error_reporting(0);
 	}
 
 	public function index() {
@@ -50,11 +49,14 @@ class Cs extends CI_Controller {
 
 //		$chatdata = array_reverse(json_decode($Resapi, true)['data'], true);
 		$chatdata = json_decode($Resapi, true)['data'];
-		$query = $this->db->get_where('apps', array('apps_id' => 1));
-		$rowapps = $query->row_array();
-		$data['link'] = $rowapps['apps_api'];
+
+
+        $query = $this->db->get_where('apps', array('apps_id' => 1));
+        $rowapps = $query->row_array();
+        $apps_api = $rowapps['apps_api'];
 
 		$data['id'] = $chat_id;
+		$data['apps_api'] = $apps_api;
 		$data['name'] = $name;
 		$data['chatdata'] = $chatdata;
 		$data['result'] = json_decode($Resapi, true);
@@ -64,7 +66,7 @@ class Cs extends CI_Controller {
 
 		$lastid = $_POST['lastid'];
 		$chat_id = $_POST['id'];
-		$url = "/messages?chat_id=$chat_id&order_by=asc&limit=1";
+		$url = "/messages?chat_id=$chat_id&order_by=desc&limit=1";
 		$Resapi = $this->data_model->Resapi("$url", "");
 //		 echo $lastid;
         $checkid= json_decode($Resapi,true)['data'][0]['id'];

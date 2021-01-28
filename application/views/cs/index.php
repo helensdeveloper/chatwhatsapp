@@ -30,14 +30,14 @@
       <div class="navbar-brand-box">
         <a href="/" class="logo logo-dark">
           <span class="logo-sm">
-            <img src="/themes/assets/images/logo.svg" alt="" height="30">
-          </span>
+                            <img src="/themes/assets/images/logo.svg" alt="" height="30">
+                        </span>
         </a>
 
         <a href="/" class="logo logo-light">
           <span class="logo-sm">
-            <img src="/themes/assets/images/logo.svg" alt="" height="30">
-          </span>
+                            <img src="/themes/assets/images/logo.svg" alt="" height="30">
+                        </span>
         </a>
       </div>
       <!-- end navbar-brand-box -->
@@ -154,9 +154,9 @@
                   <a href="#profile-user-collapseOne" class="text-dark" data-toggle="collapse" aria-expanded="true" aria-controls="profile-user-collapseOne">
                     <div class="card-header" id="profile-user-headingOne">
                       <h5 class="font-size-14 m-0">
-                        <i class="ri-user-2-line mr-2 align-middle d-inline-block"></i> About
-                        <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
-                      </h5>
+                                                    <i class="ri-user-2-line mr-2 align-middle d-inline-block"></i> About
+                                                    <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
+                                                </h5>
                     </div>
                   </a>
 
@@ -191,9 +191,9 @@
                   <a href="#profile-user-collapseTwo" class="text-dark collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="profile-user-collapseTwo">
                     <div class="card-header" id="profile-user-headingTwo">
                       <h5 class="font-size-14 m-0">
-                        <i class="ri-attachment-line mr-2 align-middle d-inline-block"></i> Attached Files
-                        <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
-                      </h5>
+                                                    <i class="ri-attachment-line mr-2 align-middle d-inline-block"></i> Attached Files
+                                                    <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
+                                                </h5>
                     </div>
                   </a>
                   <div id="profile-user-collapseTwo" class="collapse" aria-labelledby="profile-user-headingTwo" data-parent="#profile-user-accordion-1">
@@ -370,7 +370,7 @@
           <!-- Start chats content -->
           <div>
             <div class="px-4 pt-4">
-              <div class="user-chat-nav float-right">
+            <div class="user-chat-nav float-right">
                 <div class="dropdown">
                   <a href="javascript: void(0);" class="font-size-18 text-muted dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="ri-more-2-fill"></i>
@@ -402,10 +402,10 @@
             <div class="px-2">
               <h5 class="mb-3 px-3 font-size-16">Chat List</h5>
 
-              <div id="chatlistframe">
+         <div id="chatlistframe">
 
 
-              </div>
+         </div>
 
             </div>
             <!-- End chat-message-list -->
@@ -957,8 +957,8 @@
               <h5 class="font-size-16 mb-1 text-truncate">Patricia Smith</h5>
               <div class="dropdown d-inline-block mb-1">
                 <a class="text-muted dropdown-toggle pb-1 d-block" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Available <i class="mdi mdi-chevron-down"></i>
-                </a>
+                                        Available <i class="mdi mdi-chevron-down"></i>
+                                    </a>
 
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="#">Available</a>
@@ -976,9 +976,9 @@
                   <a href="#profile-setting-personalinfocollapse" class="text-dark" data-toggle="collapse" aria-expanded="true" aria-controls="profile-setting-personalinfocollapse">
                     <div class="card-header" id="profile-setting-personalinfoheading">
                       <h5 class="font-size-14 m-0">
-                        Personal Info
-                        <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
-                      </h5>
+                                                    Personal Info
+                                                    <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
+                                                </h5>
                     </div>
                   </a>
 
@@ -1016,9 +1016,9 @@
                   <a href="#profile-setting-privacycollapse" class="text-dark collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="profile-setting-privacycollapse">
                     <div class="card-header" id="profile-setting-privacyheading">
                       <h5 class="font-size-14 m-0">
-                        Privacy
-                        <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
-                      </h5>
+                                                    Privacy
+                                                    <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
+                                                </h5>
                     </div>
                   </a>
                   <div id="profile-setting-privacycollapse" class="collapse" aria-labelledby="profile-setting-privacyheading" data-parent="#profile-setting-accordion">
@@ -1118,9 +1118,9 @@
                   <a href="#profile-setting-securitynoticollapse" class="text-dark collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="profile-setting-securitynoticollapse">
                     <div class="card-header" id="profile-setting-securitynotiheading">
                       <h5 class="font-size-14 m-0">
-                        Security
-                        <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
-                      </h5>
+                                                    Security
+                                                    <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
+                                                </h5>
                     </div>
                   </a>
                   <div id="profile-setting-securitynoticollapse" class="collapse" aria-labelledby="profile-setting-securitynotiheading" data-parent="#profile-setting-accordion">
@@ -1149,9 +1149,9 @@
                   <a href="#profile-setting-helpcollapse" class="text-dark collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="profile-setting-helpcollapse">
                     <div class="card-header" id="profile-setting-helpheading">
                       <h5 class="font-size-14 m-0">
-                        Help
-                        <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
-                      </h5>
+                                                    Help
+                                                    <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
+                                                </h5>
                     </div>
                   </a>
                   <div id="profile-setting-helpcollapse" class="collapse" aria-labelledby="profile-setting-helpheading" data-parent="#profile-setting-accordion">
@@ -1229,9 +1229,9 @@
                 <a href="#collapseOne" class="text-dark" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
                   <div class="card-header" id="headingOne">
                     <h5 class="font-size-14 m-0">
-                      <i class="ri-user-2-line mr-2 align-middle d-inline-block"></i> About
-                      <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
-                    </h5>
+                                                <i class="ri-user-2-line mr-2 align-middle d-inline-block"></i> About
+                                                <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
+                                            </h5>
                   </div>
                 </a>
 
@@ -1266,9 +1266,9 @@
                 <a href="#collapseTwo" class="text-dark collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseTwo">
                   <div class="card-header" id="headingTwo">
                     <h5 class="font-size-14 m-0">
-                      <i class="ri-attachment-line mr-2 align-middle d-inline-block"></i> Attached Files
-                      <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
-                    </h5>
+                                                <i class="ri-attachment-line mr-2 align-middle d-inline-block"></i> Attached Files
+                                                <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
+                                            </h5>
                   </div>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#profile-user-accordion">
@@ -1459,15 +1459,15 @@
                   <li class="list-inline-item px-2">
                     <button type="button" class="btn btn-danger avatar-sm rounded-circle" data-dismiss="modal">
                       <span class="avatar-title bg-transparent font-size-20">
-                        <i class="ri-close-fill"></i>
-                      </span>
+                                                    <i class="ri-close-fill"></i>
+                                                </span>
                     </button>
                   </li>
                   <li class="list-inline-item px-2">
                     <button type="button" class="btn btn-success avatar-sm rounded-circle">
                       <span class="avatar-title bg-transparent font-size-20">
-                        <i class="ri-vidicon-fill"></i>
-                      </span>
+                                                    <i class="ri-vidicon-fill"></i>
+                                                </span>
                     </button>
                   </li>
                 </ul>
@@ -1502,38 +1502,37 @@
   <script>
     function loadchat(id,name){
 
-      var varurl = window.location.protocol + "//" + location.hostname + "/cs/chatframe";
-      $.ajax({
-        type: 'post',
-        url: varurl,
-        data: {"id":id,"name":name},
-        success: function (response) {
-          $("#framechat").html(response);
+  var varurl = window.location.protocol + "//" + location.hostname + "/cs/chatframe";
+  $.ajax({
+    type: 'post',
+    url: varurl,
+    data: {"id":id,"name":name},
+    success: function (response) {
+      $("#framechat").html(response);
 
-        },
-        error: function () {
-        }
-      });
+    },
+    error: function () {
+    }
+  });
     }
     chatlistframe();
     var intervalchatlistframe = setInterval(function() {
-      chatlistframe();
-    }, 5000)
-    ;
+        chatlistframe();
+    }, 5000);
 
     function chatlistframe(){
 
-      var varurl = window.location.protocol + "//" + location.hostname + "/cs/chatlistframe";
-      $.ajax({
-        type: 'post',
-        url: varurl,
-        success: function (response) {
-          $("#chatlistframe").html(response);
+  var varurl = window.location.protocol + "//" + location.hostname + "/cs/chatlistframe";
+  $.ajax({
+    type: 'post',
+    url: varurl,
+    success: function (response) {
+      $("#chatlistframe").html(response);
 
-        },
-        error: function () {
-        }
-      });
+    },
+    error: function () {
+    }
+  });
     }
 
 
